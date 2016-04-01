@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 # from django.contrib import admin
 import djangoFir.view
-import blog.urls
+import blog.views
 
 # from django.views.generic.base import
 
@@ -30,6 +30,14 @@ urlpatterns = [
     url('eam$', djangoFir.view.eam, name='eam'),
     # 程序发布
     url('product$', djangoFir.view.product, name='product'),
+    url('pretangportal$', blog.views.pretangportal, name='pretangportal'),
+    url('klfportal$', blog.views.klfportal, name='klfportal'),
+    url('klfwap$', blog.views.klfwap, name='klfwap'),
+    url('klfbackend$', blog.views.klfbackend, name='klfbackend'),
+    url('subkgj$', blog.views.subkgj, name='subkgj'),
+    url('subwgj', blog.views.subwgj, name='subwgj'),
+    url('broker', blog.views.broker, name='broker'),
+
     # url('subproduct$',include(blog.urls)),
     # 运维团队
     url('operations$', djangoFir.view.operations, name='operations'),

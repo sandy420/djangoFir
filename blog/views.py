@@ -14,28 +14,24 @@ def pretangportal(request):
 
 
 def klfportal(request):
-    pass
+    return render_to_response("web/subproduct/subklfport.html")
 
 
 def klfwap(request):
-    pass
-
-
-def klfwap(request):
-    pass
+    return render_to_response("web/subproduct/klfwap.html")
 
 
 def klfbackend(request):
-    pass
+    return render_to_response("web/subproduct/subbacked.html")
 
 
 def subkgj(request):
-    pass
+    return render_to_response("web/subproduct/subkgj.html")
 
 
 def subwgj(request):
-    pass
+    return render_to_response("web/subproduct/subwgj.html")
 
 
 def broker(request):
-    pass
+    return render_to_response("web/subproduct/subbroker.html")
