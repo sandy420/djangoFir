@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Web Space</title>
+    <script type="text/javascript" src="../../static/js/jquery-1.8.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/base_v1.0.css">
+</head>
+<body>
+<div class="eamtop">
+    <h1>服务器详情</h1>
+</div>
+<div class="floatbottom">
+    <div>
+        <form id="searchForm" name="form">
+            <div class="">
+                <a class="button btn-success btn-w100 btn-h30" href="#popup" data-toggle="modal" onclick="clearData();">新&nbsp;&nbsp;增</a>
+            </div>
+            <div class="search-content search-w170"  style="display: inline-block;width: 144px;">
+                <input type="text" name="account" class="search-input input-w140" placeholder="搜索" style="border-color: rgb(203, 207, 210);">
+                <a href="javascript:void(0)"><em class="search-em"></em></a>
+            </div>
+            <div class="dropdown-list search-province" style="width:106px;">
+                <div class="drop-list drop-list-min" style="width:80px">
+                    <div class="checked" style="width:80px;height:28px">
+                        <input type="hidden" name="provinceId">
+                        <a href="javascript:void(0);">内网IP</a>
+                    </div>
+                </div>
+                <ul class="select select-min none" style="width:104px;">
+                    <li></li>
+                </ul>
+            </div>
+            <div class="dropdown-list search-city" style="width:106px;">
+                <div class="drop-list drop-list-min" style="width:80px">
+                    <div class="checked" style="width:80px;height:28px">
+                        <input type="hidden" name="manageCity">
+                        <a href="javascript:void(0);">外网IP</a>
+                    </div>
+                </div>
+                <ul class="select select-min none" style="width:104px;" id="searchCity"></ul>
+            </div>
+        </form>
+    </div>
+    <table class="table">    </table>
+</div>
+<div class="paging">
+    <span class="total-label">总计:</span><b class="total-count">{{ total }}&nbsp;行</b>
+    <a class="page-up" href="javascript:void(0);"  title="上一页" id="prev">上一页</a><span id="pageNo" class="first-num">1</span>/<span id="count">{{ pagetotal }}</span>
+    <a class="page-down" href="javascript:void(0);"  title="下一页" id="next"><font size="3">下一页</font></a>
+    <input type="text" value="1" style="width:50px;" class="ipt-txt inputPage" id="jumpPageVal">
+    <button onclick="doJumpPage($('#jumpPageVal').val())">跳转</button>
+</div>
+<script>
+    window.onload=function() {
+       jumpPage(1);
+    }
+
+$("#prev").on("click",function(){
+       var pageNo = parseInt($("#pageNo").html());
+       if(pageNo>1){
+            pageNo--;
+       }
+       jumpPage(pageNo);
+       $("#pageNo").html(pageNo);
+});
+
+$("#next").on("click",function(){
+       var pageNo = parseInt($("#pageNo").html());
+       var countNo = parseInt($("#count").html());
+       if(pageNo < countNo){
+            pageNo++;
+       }
+       jumpPage(pageNo);
+       $("#pageNo").html(pageNo);
+});
+
+
+function jumpPage(pageNo){
+   $.ajax({
+        type:"post",
+        url:"subpage",
+        data:"prepagenum="+pageNo,
+        success:function(msg){
+            var arr;
+            try{
+                arr = eval("["+msg+"]");
+            }catch(e){
+                arr = JSON.parse("["+msg+"]");
+            }
+            console.log(arr);
+            var html = '<tr><th>编号</th><th>内网IP</th><th>外网IP</th><th>购买时间</th><th>存放位置</th> <th>使用情况</th> <th>配置详情</th><th>备注</th></tr>';
+            for(var i = 0; i<arr.length; i++){
+                html +='<tr>' +
+                        '<td>'+arr[i][0]+'</td>' +
+                        '<td>'+arr[i][1]+'</td>' +
+                        '<td>'+arr[i][2]+'</td>' +
+                        '<td>'+arr[i][3]+'</td>' +
+                        '<td>'+arr[i][4]+'</td>' +
+                        '<td>'+(arr[i][5]==1 ? "使用正常" : "未使用")+'</td>' +
+                        '<td>'+arr[i][6]+'</td>' +
+                        '<td>'+arr[i][7]+'</td>' +
+                        '</tr>'
+            }
+            $(".table").html(html);
+        }
+   });
+}
+
+function doJumpPage(jumpPageVal){
+    var countNo = parseInt($("#count").html());
+    if (jumpPageVal>0 && jumpPageVal<=countNo){
+        jumpPage(jumpPageVal);
+        $("#pageNo").html(jumpPageVal);
+    }
+}
+
+</script>
+</body>
+</html>
