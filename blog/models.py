@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib import admin
 import blog.deployee
+from django import forms
 
 
 # Create your models here.
@@ -48,5 +49,24 @@ class Server(models.Model):
     usecase = models.NullBooleanField()
     configurinfo = models.TextField()
     remark = models.TextField()
+
     def __str__(self):
         return self.buytime
+
+
+class UserForm(models.Model):
+    id = models.AutoField(primary_key=True, unique=True)
+    username = models.CharField(max_length=120)
+    headImg = models.FileField(upload_to='./upload/')
+
+    def __str__(self):
+        return self.username
+
+
+class UploadFile(models.Model):
+    filename = models.CharField(max_length=100)
+    filepath = models.CharField(max_length=200)
+    uploadtime = models.DateTimeField()
+
+    def __str__(self):
+        return self.filename

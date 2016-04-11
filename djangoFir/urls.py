@@ -14,15 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
-# from django.contrib import admin
+from django.contrib import admin
 import djangoFir.view
 import blog.views
 
+admin.autodiscover()
 # from django.views.generic.base import
 
 urlpatterns = [
     # 登陆首页
     url('^$', djangoFir.view.index, name=''),
+    url('^favicon\.ico$', 'django.views.generic.simple.redirct_to', {'url': '/static/img/favicon.ico'}),
     # 登陆
     url('^main', djangoFir.view.main, name='main'),
     url('^subpage$', djangoFir.view.subpage, name='subpage'),
@@ -37,6 +39,9 @@ urlpatterns = [
     url('subkgj$', blog.views.subkgj, name='subkgj'),
     url('subwgj', blog.views.subwgj, name='subwgj'),
     url('broker', blog.views.broker, name='broker'),
+    # 文件上传
+    url('^upload$', blog.views.upload, name='upload'),
+    url('deploy$',blog.views.deployFile,name='deployfile'),
 
     # url('subproduct$',include(blog.urls)),
     # 运维团队

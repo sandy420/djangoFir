@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Pretang CMDB</title>
+    <link type="text/css" href="../static/css/main.css">
+    <script src="../static/js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <div>
+         <p>文件上传成功! 保存路径为：</p><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;{{ file_name }}<input type="hidden" id="file_name" value="{{ file_name}}">
+        <input type="hidden" id="path" value="{{ file_path}}">
+    </div>
+<div style="width: 100%">
+    <p>开始准备发布：</p>
+    <p>选择服务器,进行灰度发布：<br>
+        <div>
+            <input type="radio" name="p_deploy" value="172.28.1.221">172.28.1.221
+            <input type="radio" name="p_deploy" value="172.28.1.230">172.28.1.230
+        </div>
+        <div style="float:right;width: 80%">
+             <button onclick="funclick()"  class="btn btn-primary block full-width m-b">提&nbsp;交</button>
+        </div>
+    </p>
+</div>
+<div style="width: 100%">
+    拷贝文件至发布目录：<br>
+    <span class="path"></span>
+</div>
+<div>
+    <div>
+        <p>是否继续全面发布:</p>
+        <input type="radio" name="tf_deploy" value="true">全面发布
+        <input type="radio" name="tf_deploy" value="false">不全面发布
+    </div>
+    <div style="float:right;width: 80%">
+         <button onclick="funclick()"  class="btn btn-primary block full-width m-b">提&nbsp;交</button>
+    </div>
+</div>
+</body>
+<script>
+    function funclick(){
+        console.log($("input[name='p_deploy']:checked").val());
+        $.ajax({
+             type: "post",
+             url: "deploy",
+             data: {p_deploy:$("input[name='p_deploy']:checked").val(),
+                 full_file_path:$("#path").val(),
+                 full_name:$("#file_name").val(),
+                 tf_deploy:$("input[name='tf_deploy']:checked").val(),
+             },
+             dataType: "text",
+             success: function(data){
+{#                 console.log("========"+data);#}
+                        $(".path").text(data);
+                      },
+             error:function(a,b,c){
+                 console.log(a);
+                 console.log(b);
+                 console.log(c);
+             }
+         });
+    }
+</script>
+</html>

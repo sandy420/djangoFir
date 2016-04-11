@@ -1,37 +1,16 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="../../../blog/static/css/uploadify.css" type="text/css" rel="stylesheet" />
-    <script src="../../../../blog/static/js/jquery.min.js" type="text/javascript"></script>
-    <script src="../../../../blog/static/js/jquery.uploadify.min.js" type="text/javascript"></script>
+    <title>Welcome to Pretang CMDB</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/footer.css">
 </head>
 <body>
-<div>
-	<h1>文件上传</h1>
-	<form>
-		<div id="queue"></div>
-		<input id="file_upload" name="file_upload" type="file" multiple="true"><button type="submit" class="btn btn-primary block full-width m-b">提&nbsp;&nbsp;交</button>
-	</form>
-</div>
-<div>1111</div>
-<div>2222</div>
+
+<h1>{{ reupload }}上传发布程序....</h1>
+<form action="upload" method="POST" enctype="multipart/form-data" >
+<input type="file" name="file"/>
+    <input type="submit" value="上传"/>
+</form>
+{{ filename }}
 </body>
-<script>
- $("#submitForm").click(function(){
-   //alert($("#SelectBus").val());
-   addNameForm();//因为是动态加载的表单内容，所以会用函数给所用标签符name值
-   $.ajaxSetup({
-     async : false
-   });
-   $("#picture_form").ajaxSubmit({
-     resetForm:false,
-     dataType:'json',
-     success:function(data){
-       if(data=1){alert("提交成功");}
-       else{alert("提交失败");}
-     }
-   });
- });
- </script>
 </html>
