@@ -1,12 +1,16 @@
 #!/usr/bin/env python3.4
 # -*- coding:utf-8 -*-
 __author__ = "sandy heng"
-from django.http import HttpResponse
-from django.shortcuts import render_to_response, render
-from django.views.decorators.csrf import csrf_exempt
-import blog.models as md
 import os
-import time, shutil
+import shutil
+import time
+
+from django.http import HttpResponse
+from django.shortcuts import render_to_response
+from django.views.decorators.csrf import csrf_exempt
+from djangoFir.base import log
+
+import blog.models as md
 
 
 # Create your views here.
@@ -44,6 +48,9 @@ def broker(request):
 #         for chunk in f.chunks():
 #             ft.write(chunk)
 
+
+
+
 @csrf_exempt
 def handle_uploaded_file(f):
     file_name = ""
@@ -58,7 +65,7 @@ def handle_uploaded_file(f):
             up = md.UploadFile(filename=f.name, filepath=path, uploadtime=time.strftime('%Y-%m-%d %H:%M:%S'))
             up.save()
     except Exception as err:
-        print(err)
+        log(err)
     return file_name, path
 
 
@@ -101,20 +108,21 @@ def copyFiles(sourceDir):
 def CleanDir(Dir):
     if os.path.isdir(Dir):
         paths = os.listdir(Dir)
-        print(paths)
         for path in paths:
             filePath = os.path.join(Dir, path)
             if os.path.isfile(filePath):
                 try:
+                    log(err="清除发布目录的内容:%s" % filePath)
                     os.remove(filePath)
                 except os.error:
                     autoRun.exception("remove %s error." % filePath)  # 引入logging
             elif os.path.isdir(filePath):
                 if filePath[-4:].lower() == ".svn".lower():
                     continue
+                log(err="清除发布目录的内容:%s" % filePath)
                 shutil.rmtree(filePath, True)
     return True
-##
+
 
 @csrf_exempt
 def deployFile(request):
@@ -126,11 +134,14 @@ def deployFile(request):
         if p_ip.internetip:
             targetDir = r"D:\temp\test\upload"  # + '\\' + str(time.strftime('%Y%m%d'))
             sourceDir = request.POST.get('full_file_path')
-            backDir = r'D:\temp\test\back\\' + str(time.strftime('%Y%m%d')) + r'\pretangportal'+str(time.strftime('/%H%M%S'))
+            backDir = r'D:\temp\test\back\\' + str(time.strftime('%Y%m%d')) + r'\pretangportal' + str(
+                time.strftime('\%H%M%S'))
             print(backDir)
+            log(err="备份原目录程序%s：" % backDir)
             # 备份原程序
             if not os.path.exists(backDir):
                 shutil.copytree(targetDir, backDir)
+                log(err="清除发布目录的内容:%s" % targetDir)
                 CleanDir(targetDir)
                 shutil.copy(request.POST.get('full_name'), targetDir)
             else:

@@ -68,7 +68,7 @@ def subpage(request):
     t = []
     i = -1
     for _x in obj:
-        i = i + 1
+        i += 1
         if _x.usecase is True:
             _x.usecase = 1
         else:

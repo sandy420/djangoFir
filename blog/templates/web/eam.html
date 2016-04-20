@@ -12,33 +12,13 @@
 </div>
 <div class="floatbottom">
     <div>
-        <form id="searchForm" name="form">
-            <div class="">
-                <a class="button btn-success btn-w100 btn-h30" href="#popup" data-toggle="modal" onclick="clearData();">新&nbsp;&nbsp;增</a>
-            </div>
+        <form id="searchForm" name="form" style="text-align: left">
             <div class="search-content search-w170"  style="display: inline-block;width: 144px;">
-                <input type="text" name="account" class="search-input input-w140" placeholder="搜索" style="border-color: rgb(203, 207, 210);">
+                <input type="text" name="account" class="search-input input-w140" placeholder="根据IP地址搜索" style="border-color: whitesmoke;">
                 <a href="javascript:void(0)"><em class="search-em"></em></a>
             </div>
-            <div class="dropdown-list search-province" style="width:106px;">
-                <div class="drop-list drop-list-min" style="width:80px">
-                    <div class="checked" style="width:80px;height:28px">
-                        <input type="hidden" name="provinceId">
-                        <a href="javascript:void(0);">内网IP</a>
-                    </div>
-                </div>
-                <ul class="select select-min none" style="width:104px;">
-                    <li></li>
-                </ul>
-            </div>
-            <div class="dropdown-list search-city" style="width:106px;">
-                <div class="drop-list drop-list-min" style="width:80px">
-                    <div class="checked" style="width:80px;height:28px">
-                        <input type="hidden" name="manageCity">
-                        <a href="javascript:void(0);">外网IP</a>
-                    </div>
-                </div>
-                <ul class="select select-min none" style="width:104px;" id="searchCity"></ul>
+            <div style="display: inline-block;float: right">
+                <a class="button btn-success btn-w100 btn-h30" href="#popup" data-toggle="modal" onclick="clearData();">新&nbsp;&nbsp;增</a>
             </div>
         </form>
     </div>

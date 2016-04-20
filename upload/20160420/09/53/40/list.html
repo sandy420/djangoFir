@@ -1,0 +1,1039 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0048)http://admin.fc.igemi.cn/se/account/partner/list -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css"></style></head><body><div class="container-fluid warp tops">
+    <h1 class="page-headers no-icon no-border">代理商账号管理</h1>
+    <div class="row-fluid">
+        <div id="myCustom" class="tab-content single-content" style="margin-top: -7px;">
+            <div class="tab-pane fade in active" id="partnerDiv">
+                <div class="right-btn">
+                    <a class="button btn-success btn-w100 btn-h30" href="http://admin.fc.igemi.cn/se/account/partner/list#popup" data-toggle="modal" onclick="clearData();">创建账号</a>
+                </div>
+                <form id="searchForm" name="form">
+                    <div class="search-content search-w170" style="display: inline-block;width: 144px;">
+                        <input type="text" name="account" class="search-input input-w140" placeholder="搜索账号" style="border-color: rgb(203, 207, 210);">
+                        <a href="javascript:void(0)"><em class="search-em"></em></a>
+                    </div>
+                    <div class="dropdown-list search-province" style="width:106px;">
+                        <div class="drop-list drop-list-min" style="width:80px">
+                            <div class="checked" style="width:80px;height:28px">
+                                <input type="hidden" name="provinceId">
+                                <a href="javascript:void(0);">省</a>
+                            </div>
+                        </div>
+                        <ul class="select select-min none" style="width:104px;">
+                            <li><a href="javascript:void(0);" provinceid="">不限</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="4">安徽</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="31">重庆</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="7">广东</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="6">甘肃</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="2">广西</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="8">贵州</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="13">湖北</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="10">河北</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="9">海南</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="12">黑龙江</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="14">湖南</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="15">吉林</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="16">江苏</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="17">江西</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="18">辽宁</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="19">内蒙古</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="21">青海</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="1">四川</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="22">山东</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="25">上海</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="23">山西</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="26">天津</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="28">新疆</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="29">云南</a></li>
+                            
+                                <li><a href="javascript:void(0);" provinceid="30">浙江</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="dropdown-list search-city" style="width:106px;">
+                        <div class="drop-list drop-list-min" style="width:80px">
+                            <div class="checked" style="width:80px;height:28px">
+                                <input type="hidden" name="manageCity">
+                                <a href="javascript:void(0);">市</a>
+                            </div>
+                        </div>
+                        <ul class="select select-min none" style="width:104px;" id="searchCity">
+                        </ul>
+                    </div>
+                </form>
+                <input type="hidden" id="currentPage" name="currentPage" value="1">
+                <table class="table" style="border-bottom-style: none;">
+                    <tbody><tr>
+                        <th>账号</th>
+                        <th>管理城市</th>
+                        <th>合作过</th>
+                        <th>合作中</th>
+                        <th>惠买房楼盘</th>
+                        <th>本城市上线惠买房</th>
+                        <th>操作</th>
+                    </tr>
+                <tr><td>stadmin</td><td>广东-汕头市</td><td>4</td><td>4</td><td>6</td><td class="operation"><span class="oper-con color-green">已上线</span><a class="change no-underline w55" onclick="offlineHmf(77)" href="http://admin.fc.igemi.cn/se/account/partner/list#offlineHmf" data-toggle="modal"><span></span><span>下线</span></a></td><td><a class="pass color-green" onclick="resetPwd(133)" href="http://admin.fc.igemi.cn/se/account/partner/list#resetPwd" data-toggle="modal">重置密码</a></td></tr><tr><td>msadmin</td><td>四川-眉山</td><td>0</td><td>0</td><td>1</td><td class="operation"><span class="oper-con">已下线</span><a class="change no-underline w55" onclick="onlineHmf(52)" href="http://admin.fc.igemi.cn/se/account/partner/list#onlineHmf" data-toggle="modal"><span></span><span>上线</span></a></td><td><a class="pass color-green" onclick="resetPwd(125)" href="http://admin.fc.igemi.cn/se/account/partner/list#resetPwd" data-toggle="modal">重置密码</a></td></tr><tr><td>lsadmin</td><td>四川-乐山</td><td>0</td><td>0</td><td>0</td><td class="operation"><span class="oper-con">已下线</span><a class="change no-underline w55" onclick="onlineHmf(71)" href="http://admin.fc.igemi.cn/se/account/partner/list#onlineHmf" data-toggle="modal"><span></span><span>上线</span></a></td><td><a class="pass color-green" onclick="resetPwd(119)" href="http://admin.fc.igemi.cn/se/account/partner/list#resetPwd" data-toggle="modal">重置密码</a></td></tr><tr><td>scncadmin</td><td>四川-南充</td><td>0</td><td>0</td><td>0</td><td class="operation"><span class="oper-con">已下线</span><a class="change no-underline w55" onclick="onlineHmf(70)" href="http://admin.fc.igemi.cn/se/account/partner/list#onlineHmf" data-toggle="modal"><span></span><span>上线</span></a></td><td><a class="pass color-green" onclick="resetPwd(113)" href="http://admin.fc.igemi.cn/se/account/partner/list#resetPwd" data-toggle="modal">重置密码</a></td></tr><tr><td>tsadmin</td><td>河北-唐山</td><td>2</td><td>1</td><td>7</td><td class="operation"><span class="oper-con color-green">已上线</span><a class="change no-underline w55" onclick="offlineHmf(65)" href="http://admin.fc.igemi.cn/se/account/partner/list#offlineHmf" data-toggle="modal"><span></span><span>下线</span></a></td><td><a class="pass color-green" onclick="resetPwd(103)" href="http://admin.fc.igemi.cn/se/account/partner/list#resetPwd" data-toggle="modal">重置密码</a></td></tr><tr><td>asadmin</td><td>辽宁-鞍山</td><td>2</td><td>2</td><td>7</td><td class="operation"><span class="oper-con color-green">已上线</span><a class="change no-underline w55" onclick="offlineHmf(62)" href="http://admin.fc.igemi.cn/se/account/partner/list#offlineHmf" data-toggle="modal"><span></span><span>下线</span></a></td><td><a class="pass color-green" onclick="resetPwd(99)" href="http://admin.fc.igemi.cn/se/account/partner/list#resetPwd" data-toggle="modal">重置密码</a></td></tr><tr><td>scdzadmin</td><td>四川-达州</td><td>1</td><td>0</td><td>0</td><td class="operation"><span class="oper-con">已下线</span><a class="change no-underline w55" onclick="onlineHmf(50)" href="http://admin.fc.igemi.cn/se/account/partner/list#onlineHmf" data-toggle="modal"><span></span><span>上线</span></a></td><td><a class="pass color-green" onclick="resetPwd(86)" href="http://admin.fc.igemi.cn/se/account/partner/list#resetPwd" data-toggle="modal">重置密码</a></td></tr><tr><td>jmsadmin</td><td>黑龙江-佳木斯</td><td>1</td><td>1</td><td>0</td><td class="operation"><span class="oper-con">已下线</span><a class="change no-underline w55" onclick="onlineHmf(48)" href="http://admin.fc.igemi.cn/se/account/partner/list#onlineHmf" data-toggle="modal"><span></span><span>上线</span></a></td><td><a class="pass color-green" onclick="resetPwd(81)" href="http://admin.fc.igemi.cn/se/account/partner/list#resetPwd" data-toggle="modal">重置密码</a></td></tr><tr><td>syadmin</td><td>辽宁-沈阳</td><td>9</td><td>8</td><td>6</td><td class="operation"><span class="oper-con color-green">已上线</span><a class="change no-underline w55" onclick="offlineHmf(45)" href="http://admin.fc.igemi.cn/se/account/partner/list#offlineHmf" data-toggle="modal"><span></span><span>下线</span></a></td><td><a class="pass color-green" onclick="resetPwd(78)" href="http://admin.fc.igemi.cn/se/account/partner/list#resetPwd" data-toggle="modal">重置密码</a></td></tr><tr><td>sxadmin</td><td>浙江-绍兴</td><td>1</td><td>0</td><td>0</td><td class="operation"><span class="oper-con">已下线</span><a class="change no-underline w55" onclick="onlineHmf(43)" href="http://admin.fc.igemi.cn/se/account/partner/list#onlineHmf" data-toggle="modal"><span></span><span>上线</span></a></td><td><a class="pass color-green" onclick="resetPwd(76)" href="http://admin.fc.igemi.cn/se/account/partner/list#resetPwd" data-toggle="modal">重置密码</a></td></tr></tbody></table>
+            </div>
+        </div><div class="paging"><span class="total-label">总计:</span><b class="total-count">16</b><a class="page-up" href="javascript:void(0);">上一页</a><span class="first-num">1</span>/<span>2</span><a class="page-down" href="javascript:void(0);">下一页</a><input type="text" class="page-input"><button>跳转</button></div>
+    </div>
+    <!---------弹出层---->
+    <!-----创建代理商账号----->
+    <div id="popup" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            <h3 class="PopupTitle">创建代理商账号</h3>
+        </div>
+        <div class="modal-body clearFix" style="height: 300px;">
+            <div class="input-cont2" id="accountWrongDiv">
+                <p>
+                    <span class="clip-popup-font w65 color-0" style="color:#757881;">账号：</span>
+                    <input type="text" id="account" name="account" class="in-text2 h30" style="width:210px;" onkeyup="validateAccount();" onkeypress="validateAccount();">
+                    <span class="value-wrong" id="accountWrong" style="top:20px;left:300px;"></span>
+                </p>
+            </div>
+            <div class="input-cont2" id="passwordWrongDiv">
+                <p>
+                    <span class="clip-popup-font w65 color-0" style="color:#757881;">密码：</span>
+                    <input type="password" id="password" name="password" class="in-text2 h30" style="width:210px;" onkeyup="validatePwd();" onkeypress="validatePwd();">
+                    <span class="value-wrong" id="passwordWrong" style="top:20px;left:300px;"></span>
+                </p>
+            </div>
+            <div class="content" style="margin-top:5px;">
+                <span class="title" style="min-width:82px;">管理城市：</span>
+                <div class="dropdown-list manage-province" style="width:108px;margin-left: -4px;">
+                    <div class="drop-list drop-list-min" style="width:72px">
+                        <div class="checked" style="width:72px;height:28px">
+                            <a href="javascript:void(0);">省</a><span></span>
+                        </div>
+                    </div>
+                    <ul class="select select-min none" style="width:96px;max-height: 170px;" id="province"><li><a href="javascript:void(0);" dataid="1">四川</a></li><li><a href="javascript:void(0);" dataid="2">广西</a></li><li><a href="javascript:void(0);" dataid="4">安徽</a></li><li><a href="javascript:void(0);" dataid="6">甘肃</a></li><li><a href="javascript:void(0);" dataid="7">广东</a></li><li><a href="javascript:void(0);" dataid="8">贵州</a></li><li><a href="javascript:void(0);" dataid="9">海南</a></li><li><a href="javascript:void(0);" dataid="10">河北</a></li><li><a href="javascript:void(0);" dataid="12">黑龙江</a></li><li><a href="javascript:void(0);" dataid="13">湖北</a></li><li><a href="javascript:void(0);" dataid="14">湖南</a></li><li><a href="javascript:void(0);" dataid="15">吉林</a></li><li><a href="javascript:void(0);" dataid="16">江苏</a></li><li><a href="javascript:void(0);" dataid="17">江西</a></li><li><a href="javascript:void(0);" dataid="18">辽宁</a></li><li><a href="javascript:void(0);" dataid="19">内蒙古</a></li><li><a href="javascript:void(0);" dataid="21">青海</a></li><li><a href="javascript:void(0);" dataid="22">山东</a></li><li><a href="javascript:void(0);" dataid="23">山西</a></li><li><a href="javascript:void(0);" dataid="25">上海</a></li><li><a href="javascript:void(0);" dataid="26">天津</a></li><li><a href="javascript:void(0);" dataid="28">新疆</a></li><li><a href="javascript:void(0);" dataid="29">云南</a></li><li><a href="javascript:void(0);" dataid="30">浙江</a></li><li><a href="javascript:void(0);" dataid="31">重庆</a></li></ul>
+                </div>
+                <div class="dropdown-list manage-city" style="width: 100px;">
+                    <div class="drop-list drop-list-min" style="width:72px">
+                        <div class="checked" style="width:72px;height:28px">
+                            <input type="hidden" id="city" name="manageCity">
+                            <a href="javascript:void(0);">市</a><span></span>
+                        </div>
+                    </div>
+                    <ul class="select select-min none" style="width:96px;max-height: 170px;" id="manageCity">
+                    </ul>
+                </div>
+            </div>
+            <span class="value-wrong" id="cityWrong" style="top:134px;left:330px;"></span>
+        </div>
+        <div class="modal-footer">
+            <button class="button btn-success btn-w100" onclick="savePartnerAccount(this)">确定</button>
+            <button class="button btn-gray btn-w100" data-dismiss="modal" aria-hidden="true">取消</button>
+        </div>
+    </div>
+
+    <!--重置密码弹出层-->
+    <div id="resetPwd" class="modal hide fade building_open" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-body">
+            <div class="pass-hint">
+                <input type="hidden" id="resetId" name="resetId">
+                <p class="hint-con" style="color:#767982;font-size:20px">是否重置该账号密码？</p>
+                <p style="text-align:center;color:#757881;font-size:14px;margin-top:25px">注：重置后密码为 123456 </p>
+            </div>
+        </div>
+        <div class="modal-footer" style="width: 224px;margin: 0 auto;">
+            <button class="button btn-caution btn-w100" onclick="confirmResetPwd(this);">是</button>
+            <button class="button btn-gray btn-w100" data-dismiss="modal" aria-hidden="true">否</button>
+        </div>
+    </div>
+
+    <!--上线惠买房弹出层-->
+    <div id="onlineHmf" class="modal hide fade building_open" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-body">
+            <div class="pass-hint">
+                <input type="hidden" id="onlineCityId">
+                <p class="hint-con" style="color:#767982;font-size:20px">是否确认上线惠买房？</p>
+            </div>
+        </div>
+        <div class="modal-footer" style="width: 224px;margin: 0 auto;">
+            <button class="button btn-caution btn-w100" onclick="confirmOnlineHmf(this);">是</button>
+            <button class="button btn-gray btn-w100" data-dismiss="modal" aria-hidden="true">否</button>
+        </div>
+    </div>
+
+    <!--下线惠买房弹出层-->
+    <div id="offlineHmf" class="modal hide fade building_open" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-body">
+            <div class="pass-hint">
+                <input type="hidden" id="offlineCityId">
+                <p class="hint-con" style="color:#767982;font-size:20px">是否确认下线惠买房？</p>
+            </div>
+        </div>
+        <div class="modal-footer" style="width: 224px;margin: 0 auto;">
+            <button class="button btn-caution btn-w100" onclick="confirmOfflineHmf(this);">是</button>
+            <button class="button btn-gray btn-w100" data-dismiss="modal" aria-hidden="true">否</button>
+        </div>
+    </div>
+</div>
+
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<!--[if lt IE 9]><script type="text/javascript" src="/static/pretang/js/css3-mediaqueries.js"></script><![endif]-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="http://admin.fc.igemi.cn/static/pretang/images/ico.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="./bootstrap.css">
+<link rel="stylesheet" type="text/css" href="./base_v3.0.css">
+<script src="./jquery.js"></script>
+<script src="./bootstrap.min.js"></script>
+<script src="./base_v3.0.js"></script>
+<script src="./build.js"></script>
+<script src="./pagelation.js"></script>
+<script type="text/javascript">
+    $(function() {
+        searchPartner();
+        $(".search-em").bind('click',function(){
+            searchPartner();
+        });
+
+        //点击搜索中的省份：搜索、更新城市列表
+        $(".search-province .select li").live('mousedown',function(){
+            var provinceId = $(this).find('a').attr('provinceId');
+            $(".search-province .drop-list .checked").find('input').val(provinceId);
+            var $checkedCity = $(".search-city .drop-list .checked");
+            $checkedCity.find('a').html("市");
+            $checkedCity.find('input').val("");
+            refreshCityList(provinceId, $('#searchCity'), 1);
+            return false;
+        });
+
+        //点击搜索中的城市：搜索
+        $(".search-city .select li").live('mousedown',function(){
+            var cityId = $(this).find('a').attr('dataId');
+            $(this).parents('.dropdown-list').find('.checked').find('input').val(cityId);
+            searchPartner();
+            return false;
+        });
+
+        //“创建代理商账号”弹框初始化省份
+        initProvince();
+
+        //点击“创建代理商账号”弹框中省份下拉菜单
+        $(".manage-province .select li").live('click',function(){
+            var provinceId = $(this).find('a').attr('dataId');
+            var $checkedCity = $(".manage-city .drop-list .checked");
+            $checkedCity.find('a').html("市");
+            $checkedCity.find('input').val("");
+            refreshCityList(provinceId, $('#manageCity'), 0);
+            return false;
+        });
+
+        //点击“创建代理商账号”弹框中城市下拉菜单
+        $(".manage-city .select li").live('click',function(){
+            var cityId = $(this).find('a').attr('dataId');
+            var $input = $(this).parents('.dropdown-list').find('.checked').find('input');
+            $input.val(cityId);
+            return false;
+        });
+    });
+
+    //创建代理商账号弹框时清除弹框中的数据
+    function clearData(){
+        $('#account').val("");
+        $('#password').val("");
+        $('#accountWrongDiv').removeClass('wrong');
+        $('#accountWrong').html('');
+        $('#passwordWrongDiv').removeClass('wrong');
+        $('#passwordWrong').html('');
+        $('#cityWrong').html('');
+        $(".manage-province .drop-list .checked").find('a').html("省");
+        var $checkedCity = $(".manage-city .drop-list .checked");
+        $checkedCity.find('a').html("市");
+        $checkedCity.find('input').val("");
+        $(".manage-city .select").empty();
+    }
+
+    //代理商账号列表数据
+    function searchPartner(currentPage){
+        if(!currentPage){
+            currentPage = 1;
+        }
+        $('#partnerDiv').pageLation({
+            container : "#partnerDiv",//table外面的div对象的ID
+            url : '/se/account/partner/list.htm',//请求地址
+            pageForm : "#searchForm",//附加条件的form表单
+            currentPage: currentPage,
+            success : function(msg, o) {
+                $('#currentPage').val(o.currentPage);
+                var strArray = [];
+                for (var i = 0; i < msg.length; i++) {
+                    var data = msg[i];
+                    strArray.push('<tr>');
+                    strArray.push('<td>'+data.account+'</td>');
+                    strArray.push('<td>'+data.manageCity+'</td>');
+                    strArray.push('<td>'+data.contractedNum+'</td>');
+                    strArray.push('<td>'+data.contractingNum+'</td>');
+                    strArray.push('<td>'+data.normalNum+'</td>');
+                    strArray.push('<td class="operation">');
+                    if(data.enableHmf){
+                        strArray.push('<span class="oper-con color-green">已上线</span>');
+                        strArray.push('<a class="change no-underline w55" onclick="offlineHmf('+data.cityId+')" href="#offlineHmf" data-toggle="modal">');
+                        strArray.push('<span></span>');
+                        strArray.push('<span>下线</span>');
+                        strArray.push('</a>');
+                    } else {
+                        strArray.push('<span class="oper-con">已下线</span>');
+                        strArray.push('<a class="change no-underline w55" onclick="onlineHmf('+data.cityId+')" href="#onlineHmf" data-toggle="modal">');
+                        strArray.push('<span></span>');
+                        strArray.push('<span>上线</span>');
+                        strArray.push('</a>');
+                    }
+                    strArray.push('</td>');
+                    strArray.push('<td>');
+                    strArray.push('<a class="pass color-green" onclick="resetPwd('+data.id+')" href="#resetPwd" data-toggle="modal">重置密码</a>');
+                    strArray.push('</td>');
+                    strArray.push('</tr>');
+                }
+                $.appendData(strArray.join(""), o);
+            }
+        });
+    }
+
+    //保存代理商账号
+    function savePartnerAccount(saveBtn){
+        var account = $('#account').val();
+        var password = $('#password').val();
+        var manageCity = $('#city').val();
+        //判断账号、密码、城市是否填写
+        if(!validateAccount()){
+            $('#account').focus();
+            return;
+        }
+        if(!validatePwd()){
+            $('#password').focus;
+            return;
+        }
+
+        if(manageCity==""){
+            $('#cityWrong').html('请选择管理城市');
+            return;
+        }
+
+        //保存
+        $.post("/se/account/partner/create.htm",
+                {"account":account, "password":password, "manageCity":manageCity},
+                function(data){
+            if(data.success){
+                statusInfo($(saveBtn), 1, "操作成功！");
+                searchPartner();
+            }else{
+                saveResult(false, data.msg);
+            }
+        }, "json");
+    }
+
+    //重置密码
+    function resetPwd(accountId) {
+        $('#resetId').val(accountId);
+    }
+
+    function confirmResetPwd(resetBtn){
+        var accountId = $('#resetId').val();
+        $.post("/se/account/partner/"+accountId+"/resetPassword.htm", function(data){
+            if(data.success){
+                statusInfo($(resetBtn), 1, "密码重置成功！");
+            }else{
+                statusInfo($(resetBtn), 2, "密码重置失败！")
+            }
+        }, "json");
+    }
+
+    //上线惠买房
+    function onlineHmf(cityId) {
+        $('#onlineCityId').val(cityId);
+    }
+
+    function confirmOnlineHmf(onlineBtn){
+        var cityId = $('#onlineCityId').val();
+        $.post("/se/account/partner/online.htm", {"cityId":cityId}, function(data){
+            if(data.success){
+                statusInfo($(onlineBtn), 1, "上线成功！");
+                searchPartner($('#currentPage').val());
+            }else{
+                statusInfo($(onlineBtn), 2, "上线失败！")
+            }
+        }, "json");
+    }
+
+    //下线惠买房
+    function offlineHmf(cityId) {
+        $('#offlineCityId').val(cityId);
+    }
+
+    function confirmOfflineHmf(onlineBtn){
+        var cityId = $('#offlineCityId').val();
+        $.post("/se/account/partner/offline.htm", {"cityId":cityId}, function(data){
+            if(data.success){
+                statusInfo($(onlineBtn), 1, "下线成功！");
+                searchPartner($('#currentPage').val());
+            }else{
+                statusInfo($(onlineBtn), 2, "下线失败！")
+            }
+        }, "json");
+    }
+
+    //验证账号
+    function validateAccount(){
+        var accountId = 'account';
+        var len = $.trim($('#'+accountId).val()).length;
+        var $wrongDiv = $('#'+accountId+'WrongDiv');
+        var $wrong = $('#'+accountId+'Wrong');
+        if (len >= 2 && len <= 15) {
+            $wrongDiv.removeClass("wrong");
+            $wrong.html('');
+            return true;
+        }
+        if(len < 2){
+            $wrongDiv.addClass("wrong");
+            $wrong.html('账号不能少于2个字符');
+            return false;
+        }
+        if (len > 15) {
+            $wrongDiv.addClass("wrong");
+            $wrong.html('账号不能超过15个字符');
+            return false;
+        }
+    }
+
+    //验证密码
+    function validatePwd(){
+        var pwdId = 'password';
+        var len = $.trim($('#'+pwdId).val()).length;
+        var $wrongDiv = $('#'+pwdId+'WrongDiv');
+        var $wrong = $('#'+pwdId+'Wrong');
+        if(len==0){
+            $wrongDiv.addClass("wrong");
+            $wrong.html('密码不能为空');
+            return false;
+        }
+        if(len<6 || len>20){
+            $wrongDiv.addClass("wrong");
+            $wrong.html('密码长度必须在6到20位之间');
+            return false;
+        }
+        if(len>=6 && len<=20){
+            $wrongDiv.removeClass("wrong");
+            $wrong.html('');
+            return true;
+        }
+    }
+
+    //省份、城市二级联动
+    var provinces = {
+        
+        "4":{
+            "provinceId":"4",
+            "provinceName":"安徽",
+            "subs" : {
+                
+                "0552":{
+                    "cityCode":"0552",
+                    "cityName": "蚌埠市"
+                },
+                
+                "0558":{
+                    "cityCode":"0558",
+                    "cityName": "阜阳"
+                },
+                
+                "0555":{
+                    "cityCode":"0555",
+                    "cityName": "马鞍山"
+                }
+                
+            }
+        },
+        
+        "31":{
+            "provinceId":"31",
+            "provinceName":"重庆",
+            "subs" : {
+                
+                "023":{
+                    "cityCode":"023",
+                    "cityName": "重庆"
+                }
+                
+            }
+        },
+        
+        "7":{
+            "provinceId":"7",
+            "provinceName":"广东",
+            "subs" : {
+                
+                "0768":{
+                    "cityCode":"0768",
+                    "cityName": "潮州市"
+                },
+                
+                "020":{
+                    "cityCode":"020",
+                    "cityName": "广州"
+                },
+                
+                "0754":{
+                    "cityCode":"0754",
+                    "cityName": "汕头市"
+                },
+                
+                "0758":{
+                    "cityCode":"0758",
+                    "cityName": "肇庆"
+                }
+                
+            }
+        },
+        
+        "6":{
+            "provinceId":"6",
+            "provinceName":"甘肃",
+            "subs" : {
+                
+                "0937":{
+                    "cityCode":"0937",
+                    "cityName": "酒泉"
+                },
+                
+                "0931":{
+                    "cityCode":"0931",
+                    "cityName": "兰州"
+                }
+                
+            }
+        },
+        
+        "2":{
+            "provinceId":"2",
+            "provinceName":"广西",
+            "subs" : {
+                
+                "0770":{
+                    "cityCode":"0770",
+                    "cityName": "防城港"
+                },
+                
+                "0773":{
+                    "cityCode":"0773",
+                    "cityName": "桂林"
+                },
+                
+                "0774":{
+                    "cityCode":"0774",
+                    "cityName": "贺州"
+                },
+                
+                "0772":{
+                    "cityCode":"0772",
+                    "cityName": "柳州"
+                },
+                
+                "0771":{
+                    "cityCode":"0771",
+                    "cityName": "南宁"
+                }
+                
+            }
+        },
+        
+        "8":{
+            "provinceId":"8",
+            "provinceName":"贵州",
+            "subs" : {
+                
+                "0851":{
+                    "cityCode":"0851",
+                    "cityName": "贵阳"
+                },
+                
+                "0856":{
+                    "cityCode":"0856",
+                    "cityName": "铜仁"
+                },
+                
+                "0852":{
+                    "cityCode":"0852",
+                    "cityName": "遵义"
+                }
+                
+            }
+        },
+        
+        "13":{
+            "provinceId":"13",
+            "provinceName":"湖北",
+            "subs" : {
+                
+                "0713":{
+                    "cityCode":"0713",
+                    "cityName": "黄冈"
+                },
+                
+                "0724":{
+                    "cityCode":"0724",
+                    "cityName": "荆门"
+                },
+                
+                "027":{
+                    "cityCode":"027",
+                    "cityName": "武汉"
+                },
+                
+                "0710":{
+                    "cityCode":"0710",
+                    "cityName": "襄阳"
+                }
+                
+            }
+        },
+        
+        "10":{
+            "provinceId":"10",
+            "provinceName":"河北",
+            "subs" : {
+                
+                "0317":{
+                    "cityCode":"0317",
+                    "cityName": "沧州"
+                },
+                
+                "0316":{
+                    "cityCode":"0316",
+                    "cityName": "廊坊"
+                },
+                
+                "0335":{
+                    "cityCode":"0335",
+                    "cityName": "秦皇岛"
+                },
+                
+                "0311":{
+                    "cityCode":"0311",
+                    "cityName": "石家庄"
+                },
+                
+                "0315":{
+                    "cityCode":"0315",
+                    "cityName": "唐山"
+                },
+                
+                "0319":{
+                    "cityCode":"0319",
+                    "cityName": "邢台"
+                }
+                
+            }
+        },
+        
+        "9":{
+            "provinceId":"9",
+            "provinceName":"海南",
+            "subs" : {
+                
+                "0898":{
+                    "cityCode":"0898",
+                    "cityName": "qiqi"
+                }
+                
+            }
+        },
+        
+        "12":{
+            "provinceId":"12",
+            "provinceName":"黑龙江",
+            "subs" : {
+                
+                "0454":{
+                    "cityCode":"0454",
+                    "cityName": "佳木斯"
+                }
+                
+            }
+        },
+        
+        "14":{
+            "provinceId":"14",
+            "provinceName":"湖南",
+            "subs" : {
+                
+                "0731":{
+                    "cityCode":"0731",
+                    "cityName": "长沙"
+                }
+                
+            }
+        },
+        
+        "15":{
+            "provinceId":"15",
+            "provinceName":"吉林",
+            "subs" : {
+                
+                "0431":{
+                    "cityCode":"0431",
+                    "cityName": "长春"
+                },
+                
+                "0432":{
+                    "cityCode":"0432",
+                    "cityName": "吉林"
+                }
+                
+            }
+        },
+        
+        "16":{
+            "provinceId":"16",
+            "provinceName":"江苏",
+            "subs" : {
+                
+                "0519":{
+                    "cityCode":"0519",
+                    "cityName": "常州"
+                },
+                
+                "025":{
+                    "cityCode":"025",
+                    "cityName": "南京"
+                },
+                
+                "0510":{
+                    "cityCode":"0510",
+                    "cityName": "无锡"
+                }
+                
+            }
+        },
+        
+        "17":{
+            "provinceId":"17",
+            "provinceName":"江西",
+            "subs" : {
+                
+                "0791":{
+                    "cityCode":"0791",
+                    "cityName": "南昌"
+                }
+                
+            }
+        },
+        
+        "18":{
+            "provinceId":"18",
+            "provinceName":"辽宁",
+            "subs" : {
+                
+                "0412":{
+                    "cityCode":"0412",
+                    "cityName": "鞍山"
+                },
+                
+                "0411":{
+                    "cityCode":"0411",
+                    "cityName": "大连"
+                },
+                
+                "0429":{
+                    "cityCode":"0429",
+                    "cityName": "葫芦岛"
+                },
+                
+                "024":{
+                    "cityCode":"024",
+                    "cityName": "沈阳"
+                }
+                
+            }
+        },
+        
+        "19":{
+            "provinceId":"19",
+            "provinceName":"内蒙古",
+            "subs" : {
+                
+                "0472":{
+                    "cityCode":"0472",
+                    "cityName": "包头"
+                },
+                
+                "0471":{
+                    "cityCode":"0471",
+                    "cityName": "呼和浩特"
+                }
+                
+            }
+        },
+        
+        "21":{
+            "provinceId":"21",
+            "provinceName":"青海",
+            "subs" : {
+                
+                "0971":{
+                    "cityCode":"0971",
+                    "cityName": "西宁"
+                }
+                
+            }
+        },
+        
+        "1":{
+            "provinceId":"1",
+            "provinceName":"四川",
+            "subs" : {
+                
+                "028":{
+                    "cityCode":"028",
+                    "cityName": "成都"
+                },
+                
+                "083801":{
+                    "cityCode":"083801",
+                    "cityName": "德阳"
+                },
+                
+                "0818":{
+                    "cityCode":"0818",
+                    "cityName": "达州"
+                },
+                
+                "0826":{
+                    "cityCode":"0826",
+                    "cityName": "广安"
+                },
+                
+                "0833":{
+                    "cityCode":"0833",
+                    "cityName": "乐山"
+                },
+                
+                "083301":{
+                    "cityCode":"083301",
+                    "cityName": "眉山"
+                },
+                
+                "0817":{
+                    "cityCode":"0817",
+                    "cityName": "南充"
+                },
+                
+                "0834":{
+                    "cityCode":"0834",
+                    "cityName": "西昌"
+                },
+                
+                "083201":{
+                    "cityCode":"083201",
+                    "cityName": "资阳"
+                }
+                
+            }
+        },
+        
+        "22":{
+            "provinceId":"22",
+            "provinceName":"山东",
+            "subs" : {
+                
+                "0534":{
+                    "cityCode":"0534",
+                    "cityName": "德州"
+                },
+                
+                "0531":{
+                    "cityCode":"0531",
+                    "cityName": "济南"
+                },
+                
+                "0537":{
+                    "cityCode":"0537",
+                    "cityName": "济宁"
+                },
+                
+                "0538":{
+                    "cityCode":"0538",
+                    "cityName": "泰安"
+                },
+                
+                "0631":{
+                    "cityCode":"0631",
+                    "cityName": "威海"
+                },
+                
+                "0535":{
+                    "cityCode":"0535",
+                    "cityName": "烟台"
+                }
+                
+            }
+        },
+        
+        "25":{
+            "provinceId":"25",
+            "provinceName":"上海",
+            "subs" : {
+                
+                "021":{
+                    "cityCode":"021",
+                    "cityName": "上海"
+                }
+                
+            }
+        },
+        
+        "23":{
+            "provinceId":"23",
+            "provinceName":"山西",
+            "subs" : {
+                
+                "0352":{
+                    "cityCode":"0352",
+                    "cityName": "大同"
+                },
+                
+                "0351":{
+                    "cityCode":"0351",
+                    "cityName": "太原"
+                },
+                
+                "0353":{
+                    "cityCode":"0353",
+                    "cityName": "阳泉"
+                }
+                
+            }
+        },
+        
+        "26":{
+            "provinceId":"26",
+            "provinceName":"天津",
+            "subs" : {
+                
+                "022":{
+                    "cityCode":"022",
+                    "cityName": "天津"
+                }
+                
+            }
+        },
+        
+        "28":{
+            "provinceId":"28",
+            "provinceName":"新疆",
+            "subs" : {
+                
+                "0902":{
+                    "cityCode":"0902",
+                    "cityName": "哈密"
+                }
+                
+            }
+        },
+        
+        "29":{
+            "provinceId":"29",
+            "provinceName":"云南",
+            "subs" : {
+                
+                "0871":{
+                    "cityCode":"0871",
+                    "cityName": "昆明"
+                },
+                
+                "0879":{
+                    "cityCode":"0879",
+                    "cityName": "普洱"
+                }
+                
+            }
+        },
+        
+        "30":{
+            "provinceId":"30",
+            "provinceName":"浙江",
+            "subs" : {
+                
+                "0573":{
+                    "cityCode":"0573",
+                    "cityName": "嘉兴"
+                },
+                
+                "0574":{
+                    "cityCode":"0574",
+                    "cityName": "宁波"
+                },
+                
+                "0575":{
+                    "cityCode":"0575",
+                    "cityName": "绍兴"
+                },
+                
+                "0576":{
+                    "cityCode":"0576",
+                    "cityName": "台州"
+                }
+                
+            }
+        }
+        
+    };
+
+    //初始化省份
+    function initProvince(){
+        var $provinceSel = $("#province");
+        $provinceSel.empty();
+        var trArray = [];
+        for(var p in provinces){
+            trArray.push('<li><a href="javascript:void(0);" dataId="'+provinces[p].provinceId+'">'+ provinces[p].provinceName +'</a></li>');
+        }
+        $provinceSel.append(trArray.join(""));
+    }
+
+    //初始化城市列表
+    function refreshCityList(provinceId, citySel, isAdd){
+        $(citySel).empty();
+        if(null!=provinceId && ""!=provinceId){
+            var cities = provinces[provinceId].subs;
+            var cityArray = [];
+            if(isAdd==1){
+                cityArray.push('<li><a href="javascript:void(0);" dataId="">不限</a></li>');
+            }
+            for(var c in cities){
+                cityArray.push('<li><a href="javascript:void(0);" dataId="'+cities[c].cityCode+'">'+ cities[c].cityName +'</a></li>');
+            }
+            $(citySel).append(cityArray.join(""));
+        }
+    }
+</script>
+</body></html>
